@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
 import "./LoginPage.css"
-import Logo from './logo.jpg'
+import Logo from './logo.png'
 import "../App.css"
 function LoginPage() {
     const [email, setEmail] = useState('');
