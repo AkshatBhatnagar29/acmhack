@@ -89,8 +89,8 @@ function LoginPage() {
 
             <div className='loginBottom'>
                 <div className="buttons">
-                <button type="button" className="btn" onClick={logInUser1} >Login as I want food</button>
-                <button type="button" className="btn" onClick={logInUser2} >Login as I have food</button>
+                <button type="button" className="btn" onClick={logInUser1} >Login as Provider</button>
+                <button type="button" className="btn" onClick={logInUser2} >Login as Reciever</button>
                 </div>
                 <p className='register'>Don't have an account? &nbsp; <a href="/register" className="link-danger">Register</a></p>
             </div>

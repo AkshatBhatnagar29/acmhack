@@ -1,8 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
-
+from flask import Flask
 from sqlalchemy.dialects.mysql import CHAR
 from uuid import uuid4
-
 
 db = SQLAlchemy()
 

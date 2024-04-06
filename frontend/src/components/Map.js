@@ -10,7 +10,7 @@ function Maps({ showButton = false }) { // Setting default props to false
     const [userLocation, setUserLocation] = useState(null);
     const [isLocationEnabled, setIsLocationEnabled] = useState(false);
 
-    
+
     useEffect(() => {
         let watchId;
         if (isLocationEnabled && navigator.geolocation) {
@@ -50,7 +50,7 @@ function Maps({ showButton = false }) { // Setting default props to false
         <>
            
             <Map
-                mapboxAccessToken="pk.eyJ1IjoidmlzaG51MTM0NSIsImEiOiJjbHVvOTU1MGgxbzczMmlwaDkxZXJhNzF0In0.0zvzB1OBPzC1XWnlhJ3QdQ"
+                mapboxAccessToken="pk.eyJ1IjoiYWtrdTI5NzUiLCJhIjoiY2x1b2V5MG1jMTd6dDJrb2YzeXNiN2llbSJ9.9Lg8k-z7lxOGCEmLChggwA"
                 style={{
                     width: "80vw",
                     height: "50vh",
