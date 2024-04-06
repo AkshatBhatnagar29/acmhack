@@ -64,19 +64,46 @@ def login_user():
         "id": user.id,
         "email": user.email
     })
-@app.route("/foodform",methods=["POST"])
-def foodform():
-    name=request.json["name"]
-    phoneno=request.json["phoneno"]
-    address=request.json["address"]
-    food=request.json["food"]
-    new_donor = Provider(name=name,phoneno=phoneno,address=address,food=food)
-    db.session.add(new_donor)
-    db.session.commit()
-    return jsonify ({
-        "name":new_donor.name
-    })
 
+
+# @app.route("/foodform",methods=["POST"])
+# def foodform():
+#     name=request.json["name"]
+#     phoneno=request.json["phoneno"]
+#     address=request.json["address"]
+#     food=request.json["food"]
+#     new_donor = Provider(name=name,phoneno=phoneno,address=address,food=food)
+#     db.session.add(new_donor)
+#     db.session.commit()
+#     return jsonify ({
+#         "name":new_donor.name
+#     })
+
+# @app.route("/foodform", methods=["POST"])
+# def foodform():
+#     Name = request.json["name"]
+#     Phone = request.json["phoneno"]
+#     Food = request.json["food"]
+#     Address=request.json["address"]
+
+#     new_donor = Provider(name=Name,phoneno=Phone,address=Address,food=Food)
+#     db.session.add(new_donor)
+#     db.session.commit()
+  
+#     # user1 = Provider.query.filter_by(name=Name).first()
+#     # user2 = Provider.query.filter_by(phone=Phone).first()
+#     # user3 = Provider.query.filter_by(food=Food).first()
+#     # user4 = Provider.query.filter_by(address=Address).first()
+#     # if user1 is None:
+#     #     return jsonify({"error": "Unauthorized Access"}), 401
+  
+  
+#     return jsonify({
+#         "name": new_donor.name,
+#         "phone": new_donor.phoneno,
+#         "food": new_donor.food,
+#         "address": new_donor.address
+#     })
  
 if __name__ == "__main__":
     app.run(debug=True)

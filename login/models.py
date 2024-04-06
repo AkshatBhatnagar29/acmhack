@@ -1,6 +1,8 @@
 from flask_sqlalchemy import SQLAlchemy
+
 from sqlalchemy.dialects.mysql import CHAR
 from uuid import uuid4
+
 
 db = SQLAlchemy()
 
@@ -20,4 +22,5 @@ class Provider(db.Model):
     phoneno = db.Column(db.String(10), primary_key=True,unique=True)
     address = db.Column(db.String(150))
     food = db.Column(db.String(100))
+
 
