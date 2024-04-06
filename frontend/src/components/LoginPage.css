@@ -1,0 +1,103 @@
+ .container{
+    background-color:#B3DEE5;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    
+}
+.headingLogin{
+    margin: 5px;
+    position: absolute;
+    top: 32vh;
+    left: 71vw;
+}
+.leftSection{
+    height: 100vh;
+    width: 50%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rightSection{
+/* background-color: blue; */
+ height: 100vh; 
+ width: 50%;
+ display: flex;
+ justify-content: center;
+    align-items: center;
+
+
+}
+.logo{
+    height: 66%;
+} 
+.btn{
+    background-color: #FFA101;
+    /* padding: 1vh; */
+    border: 2px solid #31525B;
+    border-radius: 7px;
+    padding: 9px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    /* cursor: pointer; */
+}
+.loginBottom{
+    /* display: flex; */
+    /* justify-content: space-around; */
+    position: absolute;
+    top: 20vh;
+}
+.register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5vh;
+    margin-top: 13px;
+}
+.input{
+    margin: 2vh;
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 42vh;
+}
+.enter{
+    
+    padding: 11px;
+    border: 3px solid #31525B;
+    border-radius: 10px;
+}
+.formLabel{
+    font-size: 4vh;
+    margin: 0 19px;
+}
+.rightSubSection{
+    display: flex;
+    justify-content: center;
+    background-color: #fae6b1db;
+    height: 62%;
+    width: 74%;
+    border: 3px solid #31525B;
+    border-radius: 25px;
+    align-items: center;
+    color: #31525B;
+}
+.enterSec{
+    position: relative;
+    left: 3.5vw;
+}
