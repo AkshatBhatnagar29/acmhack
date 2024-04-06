@@ -6,10 +6,10 @@ import Logo from "./logo.png"
 import {ReactTyped }from "react-typed";
 function LandingPage() {
   return (
-    <div className='container'>
+    <div className='Landing'>
      
         <div>
-        <img className='logo' src={Logo} alt="logo"/>
+        <img className='logoLand' src={Logo} alt="logo"/>
         </div>
         
       {/* <div>
@@ -22,8 +22,8 @@ function LandingPage() {
       </h1>
     </div>
       <div className='button'>
-        <Link to="/login"><button className='btn'>Login</button> </Link>
-        <Link to="/register"><button className='btn'>Register</button></Link>
+        <Link to="/login"><button className='btnLand'>Login</button> </Link>
+        <Link to="/register"><button className='btnLand'>Register</button></Link>
       </div>
     </div>
   )
