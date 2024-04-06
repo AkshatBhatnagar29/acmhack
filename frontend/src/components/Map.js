@@ -50,7 +50,10 @@ function Maps({ showButton = false }) { // Setting default props to false
         <>
            
             <Map
-                mapboxAccessToken="pk.eyJ1IjoiYWtrdTI5NzUiLCJhIjoiY2x1b2V5MG1jMTd6dDJrb2YzeXNiN2llbSJ9.9Lg8k-z7lxOGCEmLChggwA"
+
+                mapboxAccessToken="pk.eyJ1IjoicHVzaHAwMTE5IiwiYSI6ImNsdW9nb3B1ZDFxcTgya2xpaHYwczVyd2YifQ.ZGKUgHIqEWyvaGuXoG2zkw"
+
+
                 style={{
                     width: "80vw",
                     height: "50vh",

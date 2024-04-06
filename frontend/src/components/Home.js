@@ -1,13 +1,16 @@
 import React from 'react'
-
+import Floating from './Floating'
+import Mapbox from './Map'
+import "./Home.css"
 function Home() {
   return (
     <>
+    
     <div>
-      I want food
+      <Floating/>
     </div>
-    <div>
-       hahahahahah
+    <div className='bgdWant'>
+      <Mapbox/>
     </div>
     </>
   )
