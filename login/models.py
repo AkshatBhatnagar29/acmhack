@@ -13,10 +13,11 @@ class User(db.Model):
     email = db.Column(db.String(150), unique=True)
     password = db.Column(db.Text, nullable=False)
 
-# class Provider(db.Model):
-#     __tablename__="provider_info"
-#     name=db.Column(CHAR(50))
-#     phoneno=db.Column(db.Integer(10), primary_key=True, unique=True)
-#     address=db.Column(db.String(150))
-#     food=db.Column(db.String(100))
+class Provider(db.Model):
+    __tablename__ = "provider_info"
+    
+    name = db.Column(db.String(50))
+    phoneno = db.Column(db.String(10), primary_key=True,unique=True)
+    address = db.Column(db.String(150))
+    food = db.Column(db.String(100))
 
