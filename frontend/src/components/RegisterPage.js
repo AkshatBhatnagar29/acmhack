@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
+import Logo from './logo.jpg'
+import "./RegisterPage.css"
 
 function RegisterPage() {
     const [email, setEmail] = useState('');
@@ -25,32 +27,40 @@ function RegisterPage() {
     };
     return (
         <>
-            <div >
-                <p >Create Your Account</p>
+            <div className="container">
+            <div className="leftSection">
+            <img src={Logo} alt='error' className='logo'></img>
             </div>
-            <form>
-                <div >
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} id="form3Example3" placeholder="Enter a valid email address" />
-                    <label className="form-label" htmlFor="form3Example3">Email address</label>
+            <div className="rightSection">
+            <div className="rightSubSection">
+            
+            <div className='heading' >
+                <h1>Create Your Account</h1>
+            </div>
+            <form className='inputs'>
+                <div className="mail">
+                <div className='input'>
+                    <label className="formLabel" htmlFor="form3Example3">Email address</label>
+                    <input type="email" className="enter"value={email} onChange={(e) => setEmail(e.target.value)} id="form3Example3" placeholder="Enter a valid email address" />
                 </div>
-                <div >
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} id="form3Example4" placeholder="Enter password" />
-                    <label className="form-label" htmlFor="form3Example4">Password</label>
+                <div className='input' >
+                    <label className="formLabel" htmlFor="form3Example4">Password</label>
+                    <input type="password" className="enter enterSec" value={password} onChange={(e) => setPassword(e.target.value)} id="form3Example4" placeholder="Enter password" />
                   </div>
-                  <div >
-                    <div >
-                      <input type="checkbox" value="" id="form2Example3" />
-                      <label htmlFor="form2Example3">
-                        Remember me
-                      </label>
-                    </div>
-                    <a href="#!" className="text-body">Forgot password?</a>
                   </div>
-                  <div >
-                    <button type="button" className="btn btn-primary btn-lg" onClick={() => registerUser()} >Sign Up</button>
-                    <p >Login to your account <a href="/login" >Login</a></p>
+                  <div className="loginBottom">
+                  
+                    {/* <a href="#!" className="text-body">Forgot password?</a> */}
+                
+                  <div className='buttonsRegister'>
+                    <button type="button" className="btn" onClick={() => registerUser()} >Sign Up</button>
+                    <p className='register'>Already have an account &nbsp;<a href="/login" >Login</a></p>
+                  </div>
                   </div>
             </form>
+            </div>
+            </div>
+            </div>
         </>
     )
 }

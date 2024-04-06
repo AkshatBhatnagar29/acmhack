@@ -1,4 +1,9 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'MyCustomFont', sans-serif;
 }
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('./fonts/britanic.ttf') format('truetype');
+  }
