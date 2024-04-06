@@ -63,6 +63,13 @@ def login_user():
         "id": user.id,
         "email": user.email
     })
+# @app.route("/foodform",methods=["POST"])
+# def foodform():
+#     name=request.json["name"]
+#     phoneno=request.json["phoneno"]
+#     address=request.json["address"]
+#     food=request.json["food"]
+#     new_user = Provider(email=email, password=hashed_password)
  
 if __name__ == "__main__":
     app.run(debug=True)
