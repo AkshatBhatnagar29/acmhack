@@ -67,8 +67,6 @@ function LoginPage() {
             </div>
             <div className="rightSection">
             <div className="rightSubSection">
-
-           
             <div className='headingLogin'>
                 <h1>LOGIN</h1>
             </div>
