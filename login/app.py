@@ -1,7 +1,8 @@
 from flask import Flask, request, jsonify, session
 from flask_bcrypt import Bcrypt
 from flask_cors import CORS, cross_origin 
-from models import db, User
+from models import Provider, User
+from models import db
  
 app = Flask(__name__)
  
@@ -63,13 +64,19 @@ def login_user():
         "id": user.id,
         "email": user.email
     })
-# @app.route("/foodform",methods=["POST"])
-# def foodform():
-#     name=request.json["name"]
-#     phoneno=request.json["phoneno"]
-#     address=request.json["address"]
-#     food=request.json["food"]
-#     new_user = Provider(email=email, password=hashed_password)
+@app.route("/foodform",methods=["POST"])
+def foodform():
+    name=request.json["name"]
+    phoneno=request.json["phoneno"]
+    address=request.json["address"]
+    food=request.json["food"]
+    new_donor = Provider(name=name,phoneno=phoneno,address=address,food=food)
+    db.session.add(new_donor)
+    db.session.commit()
+    return jsonify ({
+        "name":new_donor.name
+    })
+
  
 if __name__ == "__main__":
     app.run(debug=True)
