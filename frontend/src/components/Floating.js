@@ -4,7 +4,7 @@ import Logo from "./logo.png"
 
 function Floating() {
   return (
-    <div class="topnavFloat">
+    <div className="topnavFloat">
 
         <img className='logoFloat' src={Logo} alt="logo"/>
         

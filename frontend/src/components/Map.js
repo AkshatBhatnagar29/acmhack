@@ -55,7 +55,7 @@ function Maps({ showButton = false }) { // Setting default props to false
                     width: "80vw",
                     height: "50vh",
                     borderRadius: "15px",
-                    border: "2px solid red",
+                    border: "2px solid #31525B",
                 }}
                 initialViewState={{
                     longitude: lng,
@@ -75,7 +75,7 @@ function Maps({ showButton = false }) { // Setting default props to false
                 </div>
             </Map>
             {showButton && ( // Conditionally render the button based on the prop
-                <button onClick={toggleLocation} className="btn">
+                <button onClick={toggleLocation} className="btn btnHave">
                     {isLocationEnabled ? 'Disable Location' : 'Enable Location'}
                 </button>
             )}
