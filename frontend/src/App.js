@@ -34,6 +34,7 @@ function App() {
       path: "/vishnu",
       element:<Vishnu/>
     }
+    
   ]);
   return (
     <div>

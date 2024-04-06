@@ -1,0 +1,22 @@
+.containerHave{
+    background-color:#B3DEE5;
+    height: 152vh;
+}
+.foodForm{
+    background-color:#fae6b1db;
+    height: 50vh;
+    width: 80vw;
+    margin: auto;
+    margin-top: 8vh;
+    border-radius: 30px;
+    border: 2px solid #31525B;
+}
+.mapHave{
+    position: relative;
+    top: 10vh;
+    /* left: 0vw; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

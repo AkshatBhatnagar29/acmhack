@@ -6,3 +6,9 @@
     height: 30px;
     width: auto;
 }
+.btnHave{
+    margin-top: 10px;
+    width: 16vw;
+    height: 8vh;
+    font-size: 3vh;
+}

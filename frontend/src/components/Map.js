@@ -10,7 +10,7 @@ function Maps({ showButton = false }) { // Setting default props to false
     const [userLocation, setUserLocation] = useState(null);
     const [isLocationEnabled, setIsLocationEnabled] = useState(false);
 
-    
+
     useEffect(() => {
         let watchId;
         if (isLocationEnabled && navigator.geolocation) {
@@ -50,12 +50,15 @@ function Maps({ showButton = false }) { // Setting default props to false
         <>
            
             <Map
+
                 mapboxAccessToken="pk.eyJ1IjoicHVzaHAwMTE5IiwiYSI6ImNsdW9nb3B1ZDFxcTgya2xpaHYwczVyd2YifQ.ZGKUgHIqEWyvaGuXoG2zkw"
+
+
                 style={{
                     width: "80vw",
                     height: "50vh",
                     borderRadius: "15px",
-                    border: "2px solid red",
+                    border: "2px solid #31525B",
                 }}
                 initialViewState={{
                     longitude: lng,
@@ -75,7 +78,7 @@ function Maps({ showButton = false }) { // Setting default props to false
                 </div>
             </Map>
             {showButton && ( // Conditionally render the button based on the prop
-                <button onClick={toggleLocation} className="btn">
+                <button onClick={toggleLocation} className="btn btnHave">
                     {isLocationEnabled ? 'Disable Location' : 'Enable Location'}
                 </button>
             )}

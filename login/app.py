@@ -3,15 +3,13 @@ from flask_bcrypt import Bcrypt
 from flask_cors import CORS, cross_origin 
 from models import Provider, User
 from models import db
- 
 app = Flask(__name__)
- 
 app.config['SECRET_KEY'] = 'BinaryPhantoms'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:12345@localhost/userlog'
- 
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SQLALCHEMY_ECHO = True
-  
+ 
 bcrypt = Bcrypt(app) 
 CORS(app, supports_credentials=True)
 db.init_app(app)
@@ -64,19 +62,32 @@ def login_user():
         "id": user.id,
         "email": user.email
     })
-@app.route("/foodform",methods=["POST"])
+
+@app.route("/foodform", methods=["POST"])
 def foodform():
-    name=request.json["name"]
-    phoneno=request.json["phoneno"]
-    address=request.json["address"]
-    food=request.json["food"]
-    new_donor = Provider(name=name,phoneno=phoneno,address=address,food=food)
+    Name = request.json["name"]
+    Phone = request.json["phoneno"]
+    Food = request.json["food"]
+    Address=request.json["address"]
+
+    new_donor = Provider(name=Name,phoneno=Phone,address=Address,food=Food)
     db.session.add(new_donor)
     db.session.commit()
-    return jsonify ({
-        "name":new_donor.name
+  
+    return jsonify({
+        "name": new_donor.name,
+        "phone": new_donor.phoneno,
+        "food": new_donor.food,
+        "address": new_donor.address
     })
-
  
+@app.route("/foodform", methods=["GET"])
+def get_food():
+    food = Provider.query.all()
+    food_list = [{'name': user.name, 'phone':user.phoneno, "food": user.food,"address": user.address} for user in food]
+    return jsonify(food_list)
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
