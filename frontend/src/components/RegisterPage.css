@@ -41,6 +41,7 @@
     padding: 9px;
     margin: 0 20px;
     cursor: pointer;
+    font-size: 82%;
 }
 .buttonsRegister{
     display: flex;
