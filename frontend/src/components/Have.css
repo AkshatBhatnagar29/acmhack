@@ -1,15 +1,20 @@
 .containerHave{
     background-color:#B3DEE5;
-    height: 152vh;
+    height: 167vh;
 }
 .foodForm{
-    background-color:#fae6b1db;
+
+    background-color: #fae6b1db;
     height: 50vh;
     width: 80vw;
     margin: auto;
     margin-top: 8vh;
     border-radius: 30px;
     border: 2px solid #31525B;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .mapHave{
     position: relative;
@@ -19,4 +24,42 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.formLabelName{
+    position: relative;
+    left: -5vw;
+}
+
+.formLabelFood{
+    position: relative;
+    left: -3.5vw;
+
+}
+.formLabelAddress{
+    position: relative;
+    left: -2vw;
+
+}
+.formLabelPh{
+    position: relative;
+    left: -6.5vw;
+}
+.EnterName{
+    position: relative;
+    left: 5vw;
+}
+
+.EnterFood{
+    position: relative;
+    left: 2vw;
+
+}
+.EnterlAddress{
+    position: relative;
+    left: 2vw;
+
+}
+.EnterPh{
+    position: relative;
+    left: 6.5vw;
 }

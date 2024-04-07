@@ -49,20 +49,20 @@ const submitDetails =()=>{
       <Floating/>
       <form className='foodForm'>
       <div className='input'>
-                <label className="formLabel" htmlFor="form3Example3">Name</label>
-                <input type="text" value={name} onChange={(e) => setName(e.target.value)} id="form3Example3" className="enter" placeholder="Enter your name" />
+                <label className="formLabel formLabelPh" htmlFor="form3Example3">Name</label>
+                <input type="text" value={name} onChange={(e) => setName(e.target.value)} id="form3Example3" className="enter enterName" placeholder="Enter your name" />
             </div>
             <div className='input'>
-                <label className="formLabel" htmlFor="form3Example4">phone no.</label>
-                <input type="tel" value={phoneno} onChange={(e) => setPhoneno(e.target.value)} id="form3Example4" className="enter" placeholder="Enter your phone no." />
+                <label className="formLabel formLabelName" htmlFor="form3Example4">Phone no.</label>
+                <input type="tel" value={phoneno} onChange={(e) => setPhoneno(e.target.value)} id="form3Example4" className="enter enterPhone" placeholder="Enter your Phone no." />
             </div>
             <div className='input'>
-                <label className="formLabel" htmlFor="form3Example5">Food you have</label>
-                <input type="text" value={food} onChange={(e) => setFood(e.target.value)} id="form3Example5" className="enter" placeholder="Enter Food you have" />
+                <label className="formLabel formLabelFood" htmlFor="form3Example5">Food you have</label>
+                <input type="text" value={food} onChange={(e) => setFood(e.target.value)} id="form3Example5" className="enter enterFood" placeholder="Enter Food you have" />
             </div>
             <div className='input'>
-                <label className="formLabel" htmlFor="form3Example6">Enter your address</label>
-                <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} id="form3Example6" className="enter" placeholder="Enter Food you have" />
+                <label className="formLabel formLabelAddress" htmlFor="form3Example6">Enter your address</label>
+                <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} id="form3Example6" className="enter enterAdress" placeholder="Enter your address" />
             </div>
             <button type="button" className="btn" onClick={submitDetails} >Submit</button>
       </form>

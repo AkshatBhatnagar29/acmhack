@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, session
 from flask_bcrypt import Bcrypt
 from flask_cors import CORS, cross_origin 
-from models import Provider, User
+from models import Provider, User,Location
 from models import db
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'BinaryPhantoms'
@@ -69,6 +69,7 @@ def foodform():
     Phone = request.json["phoneno"]
     Food = request.json["food"]
     Address=request.json["address"]
+    
 
     new_donor = Provider(name=Name,phoneno=Phone,address=Address,food=Food)
     db.session.add(new_donor)
@@ -78,15 +79,35 @@ def foodform():
         "name": new_donor.name,
         "phone": new_donor.phoneno,
         "food": new_donor.food,
-        "address": new_donor.address
+        "address": new_donor.address,
+       
     })
  
 @app.route("/foodform", methods=["GET"])
 def get_food():
     food = Provider.query.all()
-    food_list = [{'name': user.name, 'phone':user.phoneno, "food": user.food,"address": user.address} for user in food]
+    food_list = [{'name': user.name, 'phone':user.phoneno, "food": user.food,"address": user.address,} for user in food]
     return jsonify(food_list)
 
+
+
+@app.route("/location",methods=["POST"])
+def locationn():
+    Latitude=request.json["latitude"]
+    Longitude=request.json["longitude"]
+    newloc = Location(latitude=Latitude,longitude=Longitude)
+    db.session.add(newloc)
+    db.session.commit()
+    return jsonify({
+        "latitude": newloc.latitude,
+        "longitude": newloc.longitude
+
+    })
+@app.route("/location", methods=["GET"])
+def loc_get():
+    loca = Location.query.all()
+    loca_list = [{'latitude':loc.latitude,"longitude":loc.longitude} for loc in loca]
+    return jsonify(loca_list)
 
 
 if __name__ == "__main__":

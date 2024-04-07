@@ -1,4 +1,30 @@
 .bgdWant{
     background-color: #B3DEE5;
     padding: 150px;
+    height: 47vh;
+}
+.btnWant{
+    position: absolute;
+    top: 97vh;
+    left: 42vw;
+    width: 13vw;
+    height: 6vh;
+    font-size: 3vh;
+}
+.dataInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    width: 50vw;
+    height: 50vh;
+    background-color: #fae6b1db;
+    position: absolute;
+    top: 6vh;
+    left: 14vw;
+    z-index: 12;
+}
+.mapWant{
+    position: relative;
+    top: -14vh;
 }

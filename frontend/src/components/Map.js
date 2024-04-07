@@ -3,12 +3,14 @@ import React, { useState, useEffect } from "react";
 import Map, { NavigationControl, Marker } from "react-map-gl";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import "./Map.css";
+import axios from 'axios';
 
-function Maps({ showButton = false }) { // Setting default props to false
+function Maps({ showButton = false }) { 
     const [lng , setLng] = useState(76.3731228);
     const [lat , setLat] = useState(30.3498687);
     const [userLocation, setUserLocation] = useState(null);
     const [isLocationEnabled, setIsLocationEnabled] = useState(false);
+    
 
 
     useEffect(() => {
@@ -20,6 +22,10 @@ function Maps({ showButton = false }) { // Setting default props to false
                         latitude: position.coords.latitude,
                         longitude: position.coords.longitude
                     });
+                    // setLat(position.coords.latitude);
+                    // setLng(position.coords.longitude);
+                    // console.log("User location latitude:", position.coords.latitude);
+                    // console.log("User location longitude:", position.coords.longitude);
                 },
                 (error) => {
                     console.error("Error getting user location:", error);
@@ -27,7 +33,7 @@ function Maps({ showButton = false }) { // Setting default props to false
             );
         } else if (!isLocationEnabled && watchId) {
             navigator.geolocation.clearWatch(watchId);
-            setUserLocation(null); // Reset user location when tracking is disabled
+            setUserLocation(null); 
         }
     
         return () => {
@@ -36,27 +42,39 @@ function Maps({ showButton = false }) { // Setting default props to false
             }
         };
     }, [isLocationEnabled]);
-    
+   
 
     const toggleLocation = () => {
         if (isLocationEnabled) {
             alert("Please disable the location manually.");
         } else {
             setIsLocationEnabled(prevState => !prevState);
-        }
+            axios.post('http://127.0.0.1:5000/location', {
+               latitude:lat,
+               longitude:lng
+            })
+            .then(function (response) {
+              console.log(response);
+              //console.log(response.data);
+              // navigate("/home");
+              alert("success");
+          })
+          .catch(function (error) {
+            console.log(error, 'error');
+            if (error.response.status === 401) {
+                alert("error");
+            }
+        });
     };
-
+    }
     return (
         <>
            
             <Map
-
                 mapboxAccessToken="pk.eyJ1IjoicHVzaHAwMTE5IiwiYSI6ImNsdW9nb3B1ZDFxcTgya2xpaHYwczVyd2YifQ.ZGKUgHIqEWyvaGuXoG2zkw"
-
-
                 style={{
                     width: "80vw",
-                    height: "50vh",
+                    height: "62vh",
                     borderRadius: "15px",
                     border: "2px solid #31525B",
                 }}
@@ -77,7 +95,7 @@ function Maps({ showButton = false }) { // Setting default props to false
                     <NavigationControl />
                 </div>
             </Map>
-            {showButton && ( // Conditionally render the button based on the prop
+            {showButton && ( 
                 <button onClick={toggleLocation} className="btn btnHave">
                     {isLocationEnabled ? 'Disable Location' : 'Enable Location'}
                 </button>

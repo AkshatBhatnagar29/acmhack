@@ -9,13 +9,14 @@ import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage'
 import Home from './components/Home';
 import Vishnu from './components/Vishnu';
+// import MapSec from "./components/MapSec"
 // import Floating from './components/Floating';
 function App() {
   const router  = createBrowserRouter([
     {
       path: "/",
       element:<LandingPage/>
-      // element:<Floating/>
+      // element:<MapSec/>
 
     },
     {

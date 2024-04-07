@@ -12,3 +12,14 @@
     height: 8vh;
     font-size: 3vh;
 }
+.marker{
+z-index: 10;
+cursor: pointer;
+/* background-color: red; */
+}
+.btnClose{
+    position: absolute;
+    top: 2vh;
+    left: 45vw;
+    border-radius: 50%;
+}
